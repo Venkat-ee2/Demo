@@ -33,4 +33,4 @@ jobs:
 
       - name: Deploy Prefect Flow
         run: |
-          prefect deploy --name default --pool default-pool flows/flow.py:flow
+          prefect deploy --name My-pool My-pool flows/flow.py:flow
