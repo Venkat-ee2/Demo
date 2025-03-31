@@ -25,9 +25,14 @@ jobs:
 
       - name: Authenticate with Prefect Cloud
         run: |
-         prefect cloud login --key "${{ secrets.PREFECT_API_KEY }}" --workspace "venkat-ee/default"
+          prefect cloud login --key "${{ secrets.PREFECT_API_KEY }}" --workspace "venkat-ee/default"
 
-
-      - name: Deploy flow to Prefect Cloud
+      - name: Build and apply Prefect deployment
         run: |
-          python flows/flow.py  # Change to your flow path
+          prefect deployment build flow.py:flow -n default --pool default-pool -q default
+          prefect deployment apply prefect.yaml
+
+      - name: Trigger Prefect deployment
+        run: |
+          prefect deployment run 'default'
+
