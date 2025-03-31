@@ -29,4 +29,4 @@ jobs:
 
       - name: Deploy Prefect Flow
         run: |
-          prefect deploy --name default --work-pool default-pool
+         prefect deploy --name default --pool default-pool
