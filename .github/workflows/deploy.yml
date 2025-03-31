@@ -25,7 +25,7 @@ jobs:
 
       - name: Authenticate with Prefect Cloud
         run: |
-         prefect cloud login --key "${{ secrets.PREFECT_API_KEY }}" --workspace "${{ secrets.PREFECT_WORKSPACE_ID }}"
+         prefect cloud login --key "${{ secrets.PREFECT_API_KEY }}" --workspace "venkat-ee/default"
 
 
       - name: Deploy flow to Prefect Cloud
