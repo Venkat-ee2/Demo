@@ -24,7 +24,7 @@ jobs:
           pip install prefect
 
       - name: Authenticate with Prefect Cloud
-        run: prefect cloud login --key ${{ secrets.PREFECT_API_KEY }}  # Store your API key in GitHub Secrets
+        run: prefect cloud login --key <YOUR_API_KEY> --workspace <YOUR_WORKSPACE_ID>  # Store your API key & Workspace Id  in GitHub Secrets
 
       - name: Deploy flow to Prefect Cloud
         run: |
