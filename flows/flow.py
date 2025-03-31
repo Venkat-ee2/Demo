@@ -1,14 +1,12 @@
-from prefect import task, Flow
+from prefect import task, flow
 
 @task
-def say_hello(name: str):
-    print(f"Hello, {name}!")
+def say_hello():
+    print("hello world!")
 
-with Flow("hello-flow") as flow:
-    name = "World"  
-    say_hello(name)
-
+@flow
+def flow():
+    say_hello()
 
 if __name__ == "__main__":
-    flow.run()
-
+    flow()
