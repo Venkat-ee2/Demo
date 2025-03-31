@@ -29,8 +29,8 @@ jobs:
           
       - name: flow to Prefect Cloud
         run: |
-          python flows/flow.py  # Change to your flow path
-          
-      - name: Build Prefect Deployment
+          python flows/flow.py  
+
+      - name: Deploy Prefect Flow
         run: |
-          prefect deployment create --name default --pool default-pool flows/flow.py:flow
+          prefect deploy --name default --pool default-pool flows/flow.py:flow
